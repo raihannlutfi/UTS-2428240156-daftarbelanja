@@ -46,11 +46,16 @@ function tampil() {
     // lakukan perulangan ( forEach)
     hasil.forEach(element => {
         // console.log(element)
-        document.getElementById("list-barang").innerHTML += `<div class="col-lg-4 col-md-6 col-sm-12">
-         <h4 class= "text-primary">${element.nama_barang}</h4> 
-         <h6 class="text-danger">${element.jumlah}</h6> 
-         <p>${element.keterangan}</p>
-        </div>`
+        document.getElementById("list-barang").innerHTML += `<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Banrang
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">${element.nama_barang}</li>
+    <li class="list-group-item">${element.jumlah}</li>
+    <li class="list-group-item">${element.keterangan}</li>
+  </ul>
+</div>`
     });
 }
 // jalankan function tampil()
