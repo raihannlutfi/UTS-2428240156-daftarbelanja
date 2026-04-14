@@ -1,4 +1,4 @@
-let Nama = document.getElementById("nama");
+let nama_barang = document.getElementById("nama_barang");
 let jumlah = document.getElementById("jumlah");
 let keterangan = document.getElementById("keterangan");
 
@@ -12,12 +12,12 @@ function simpan(){
     // localStorage.setItem("nama",nama.value)
 
     // jika local storage ada isi atau value
-    if(localStorage.getItem("mahasiswa")===null){
+    if(localStorage.getItem("DaftarBelanja")===null){
         // simpan array kososng []
-        localStorage.setItem("mahasiswa", "[]")
+        localStorage.setItem("DaftarBelanja", "[]")
     }
     // panggil local storage (konversi string = > object)
-    let data = JSON.parse(localStorage.getItem("mahasiswa"))
+    let data = JSON.parse(localStorage.getItem("DaftarBelanja"))
     console.log(data)
 
     // simpan value npm dan nama ke dalam object data
