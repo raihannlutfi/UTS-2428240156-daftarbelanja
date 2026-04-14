@@ -12,12 +12,12 @@ function simpan(){
     // localStorage.setItem("nama",nama.value)
 
     // jika local storage ada isi atau value
-    if(localStorage.getItem("DaftarBelanja")===null){
+    if(localStorage.getItem("barang")===null){
         // simpan array kososng []
-        localStorage.setItem("DaftarBelanja", "[]")
+        localStorage.setItem("barang", "[]")
     }
     // panggil local storage (konversi string = > object)
-    let data = JSON.parse(localStorage.getItem("DaftarBelanja"))
+    let data = JSON.parse(localStorage.getItem("barang"))
     console.log(data)
 
     // simpan value npm dan nama ke dalam object data
@@ -30,7 +30,7 @@ function simpan(){
 
     // simpan data terbaru ke dalam local storage
     // konversi dari object menjadi string
-    localStorage.setItem("mahasiswa", JSON.stringify(data))
+    localStorage.setItem("barang", JSON.stringify(data))
 
     // panggil tampil
     tampil()
@@ -38,15 +38,15 @@ function simpan(){
 
 function tampil() {
     // panggil local storage
-    let hasil = JSON.parse(localStorage.getItem("mahasiswa"))
+    let hasil = JSON.parse(localStorage.getItem("barang"))
 
     // clear element ul id= list-mhs
-    document.getElementById("list-mhs").innerHTML=""
+    document.getElementById("list-barang").innerHTML=""
 
     // lakukan perulangan ( forEach)
     hasil.forEach(element => {
         // console.log(element)
-        document.getElementById("list-mhs").innerHTML += `<div class="col-lg-4 col-md-6 col-sm-12">
+        document.getElementById("list-barang").innerHTML += `<div class="col-lg-4 col-md-6 col-sm-12">
          <h4 class= "text-primary">${element.nama_barang}</h4> 
          <h6 class="text-danger">${element.jumlah}</h6> 
          <p>${element.keterangan}</p>
